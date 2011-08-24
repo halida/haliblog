@@ -32,7 +32,7 @@ def updateDB
                           :raw_content => source,
                           :content => create_content(source),
                           :created => created[0,16],
-                          :updated => updated[0,16],
+                          :updated => updated[0,16]
                           )
     article.save
     puts article.content

@@ -9,7 +9,7 @@
   <copyright>&amp;copy; 2010, linjunhalida.</copyright>
   <pubDate>#{@updated}</pubDate>
 
-  =@articles.each do |article|
+  -@articles.each do |article|
     %item
       <title>#{article.title}</title>
       <link>http://server.linjunhalida.com/blog/article/#{article.title}</link>

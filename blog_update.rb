@@ -21,7 +21,7 @@ def updateDB
     ]
   end
   # 按时间排序
-  infos.sort!.reverse!
+  infos.sort!
   # 把资料塞到数据库里面
   Article.destroy
   infos.each do |created, updated, title|

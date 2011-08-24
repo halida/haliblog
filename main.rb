@@ -11,7 +11,8 @@ configure do
 end
 
 get '/' do
-  @articles = Article.all(:order => [:created.desc]).first 5
+  starts = params[:starts] || 10000000
+  @articles = Article.first(5, :id.lt => starts, :order => :created.desc)
   haml :index 
 end
 
@@ -37,6 +38,6 @@ get '/rss' do
 end
 
 get '/about' do
-  redirect to('/article/机械唯物主义')
+  redirect to('/article/%E6%9C%BA%E6%A2%B0%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89')
 end
 

@@ -5,9 +5,16 @@ require './rst'
 require './db'
 
 set :port, 8181
+# set :environment, :production
 
-configure do
-  mime_type :json, 'application/json'
+not_found do
+  @title = "404"
+  haml :not_found
+end
+
+error do
+  @title = "出错鸟"
+  haml :error
 end
 
 get '/' do

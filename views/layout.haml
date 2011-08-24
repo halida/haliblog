@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 %html
   %head
-    %title {{title}}
+    %title= @title || "网络寻租"
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="halida" />
     <link rel="stylesheet" type="text/css" href="/style.css" media="screen" />
@@ -24,11 +24,11 @@
       #top-nav-items
         %ul
           %li 
-            %a{:href=>"/blog"} 网络寻租
+            %a{:href=>"/"} 网络寻租
           %li 
             %a{:href=>"/list"} 列表
           %li 
-            %a{:href=>"/article/机械唯物主义"} 关于
+            %a{:href=>"/about"} 关于
           %li
             %a{:href=>"/rss"} rss
           %li
@@ -39,7 +39,7 @@
     #wrapper
 
       #header
-        %h1= @header || "网络寻租"
+        %h1= @title || "网络寻租"
 
       #content
         =yield

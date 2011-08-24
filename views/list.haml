@@ -1,18 +1,9 @@
 =@articles.each do |article|
 
-  %h1#article-title
+  %h1
     <a href="/article/#{article.title}">#{article.show_title}</a>
 
-  #article
-    =article.content
-
-  %p#time-stamp
+  %p{:align => "right"}
     建立时间: #{article.created}<br/>更新时间: #{article.updated}
 
   %hr
-  %br
-  %br
-
-
-
-

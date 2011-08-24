@@ -1,0 +1,83 @@
+/* CSS Document */
+
+/* convas */
+body,html {
+    margin:0;
+    padding:0;
+    background: white;
+}
+#top-nav, #wrapper {
+    width: 920px;
+    margin:0 auto;
+    background-color: white;
+}
+/* navigation bar horizontal */
+#top-nav-items, #top-nav-info{
+    display:inline;
+}
+#top-nav ul, #top-nav li{
+    display:inline;
+    margin:0;
+    padding:0;
+}
+#top-nav-info {float:right;}
+
+#title {
+    text-align:center;
+}
+
+/* float sidebar */
+#content {
+    float:left;
+    width:700px;
+    min-height:600px;
+}
+#sidebar {
+    float:right;
+    width:200px;
+}
+#footer {
+    clear:both;
+}
+
+/* table */
+table{
+    width:600px;
+}
+th {
+    background-color: #47EC68;
+}
+td {
+/* background-color: #f0f0f0; */
+}
+
+/* color */
+#comments {
+    background-color: white;
+}
+hr {
+    border-color: #e0e0e0;
+    border-width: 1px;
+    border-style: dashed;
+}
+#footer{color: #a0a0a0;}
+
+/* link */
+a {text-decoration: none;}
+
+#msg{
+    /* position:absolute; */
+    top:0%;
+    width:100%;
+
+    font-size:x-large;
+    background-color: #47EC68;
+    color: red;
+    text-align: center;
+
+    border: none;
+    display: block;
+    float: none;
+    overflow: hidden;
+    position: fixed;
+}

@@ -81,3 +81,21 @@ a {text-decoration: none;}
     overflow: hidden;
     position: fixed;
 }
+
+#article {
+    width: 600;
+    margin-left: 2cm;
+}
+
+#article-title{
+    text-align: left;
+}
+
+#time-stamp{
+    text-align: right;
+}
+
+#paginate{
+    font-size: 20px;
+    text-align: right;
+}

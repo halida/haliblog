@@ -1,7 +1,7 @@
 -@articles.each do |article|
 
   %h1#article-title
-    <a href="/article/#{article.title}">#{article.show_title}</a>
+    =link_to article.show_title, "/article/#{article.title}"
 
   #article
     =article.content
@@ -14,4 +14,4 @@
   %br
 
 #paginate
-  <a href="?starts=#{@articles[-1].id}">更多</a>
+  =link_to "更多", "?starts=#{@articles[-1].id}"

@@ -8,3 +8,7 @@ gem 'sqlite3'
 gem "dm-sqlite-adapter"
 gem 'RbST'
 gem 'sass'
+gem 'coffee-script'
+gem 'extcjs'
+gem 'therubyracer'
+

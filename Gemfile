@@ -1,3 +1,5 @@
+source 'http://rubygems.org'
+
 gem 'shotgun'
 gem 'sinatra'
 gem 'haml'
@@ -7,6 +9,6 @@ gem "dm-sqlite-adapter"
 gem 'RbST'
 gem 'sass'
 gem 'coffee-script'
-gem 'extcjs'
+gem 'execjs'
 gem 'therubyracer'
 

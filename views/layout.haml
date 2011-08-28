@@ -4,43 +4,38 @@
     %title= @title || "网络寻租"
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="halida" />
-    <link rel="stylesheet" type="text/css" href="/style.css" media="screen" />
+    <link rel="stylesheet" href="/bootstrap-1.1.1.min.css">
     <link rel="stylesheet" type="text/css" href="/pygments-default.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/main.css" media="screen" />
+
     <script src="/jquery.js"></script>
     <script src="/jquery.pjax.js"></script>
     <script src="/main.js"></script>
     <script type="text/javascript">
-    //init();
-    init_pjax();
+    $(function(){init_pjax();});
     </script>    
 
   %body
 
-    #top-nav
-      #top-nav-items
-        %ul
-          %li 
+    .topbar
+      .fill
+        .container
+          %h3
             =link_to "网络寻租", "/", true
-          %li 
-            =link_to "列表", "/list", true
-          %li 
-            =link_to "关于", "/about", true
-          %li
-            =link_to "rss", "/rss"
-          %li
-            =link_to "feed", "/feed"
+          %ul
+            %li 
+              =link_to "列表", "/list", true
+            %li 
+              =link_to "关于", "/about", true
+            %li
+              =link_to "rss", "/rss"
+            %li
+              =link_to "feed", "/feed"
 
-    %hr
 
-    #wrapper
+    .container-fluid
 
-      .error
-      <div class='loader' style='display:none'><img src='/spin.gif'></div>
-
-      #content
-        =yield
-
-      #sidebar
+      .sidebar
         <!-- search -->
         <div id="cse" style="width: 100%">Loading</div>
         <script src="http://www.google.com/jsapi" type="text/javascript"></script>
@@ -53,6 +48,7 @@
         }, true);
         </script>
         <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
         <!-- for twitter -->
         <script src="http://widgets.twimg.com/j/2/widget.js"></script>
         <script>
@@ -61,7 +57,7 @@
         type: 'profile',
         rpp: 4,
         interval: 6000,
-        width: 200,
+        width: 300,
         height: 300,
         theme: {
         shell: {
@@ -86,4 +82,9 @@
         }).render().setUser('linjunhalida').start();
         </script>
 
-      #footer @2010 linjunhalida, all right reserved
+      .content
+        =yield
+
+      %footer
+        %p @2010 linjunhalida, all right reserved
+

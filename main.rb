@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 require 'sinatra'
 require 'haml'
+require 'sass'
+require 'coffee-script'
+
 require './rst'
 require './db'
 
@@ -61,6 +64,14 @@ def myhaml target, args={}
 end
 
 def link_to name, link, pjax=""
-  pjax = "class=\"js-pjax\"" if pjax
+  pjax = "class=\"js-pjax\"" unless pjax == ""
   "<a href=\"#{link}\"#{pjax}>#{name}</a>"
+end
+
+get '/main.css' do
+  sass :main
+end
+
+get '/main.js' do
+  coffee :main
 end

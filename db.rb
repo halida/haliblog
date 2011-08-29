@@ -25,13 +25,21 @@ class Article
     @title.gsub('_', ' ')
   end
 
+  def get_content
+    if (@content.nil? or @content.empty?) 
+      @content = create_content self.raw_content
+    end
+    @content
+  end
+
 end
 
 def create_content source
   file = Tempfile.new('content')
   file.write(source)
-  file.close
-  content = `python #{File.dirname(__FILE__)}/rst.py #{file.path}`
+  file.flush.close
+  cmd = "python #{File.dirname(__FILE__)}/rst.py #{file.path}"
+  content = `#{cmd}`
   file.unlink
   content
 end

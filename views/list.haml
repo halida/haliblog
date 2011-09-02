@@ -1,7 +1,7 @@
 -@articles.each do |article|
 
   %h1
-    =link_to article.show_title, "/article/#{article.title}"
+    =link_to article.show_title, "/article/#{article.title}", true
 
   %p{:align => "right"}
     建立时间: #{article.created}<br/>更新时间: #{article.updated}

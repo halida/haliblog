@@ -14,7 +14,7 @@
       <title>#{article.title}</title>
       <link>http://blog.linjunhalida.com/article/#{article.title}</link>
       <content:encoded>
-      =article.content
+      =@article.get_content
       </content:encoded>
       <dc:creator>机械唯物主义</dc:creator>
       <pubDate>#{article.created}</pubDate>

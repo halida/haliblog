@@ -49,10 +49,6 @@ get '/feed' do
   myhaml :feed, {:layout => false}
 end
 
-get '/rss' do
-  redirect to '/feed'
-end
-
 get '/about' do
   @article = Article.first :title => "机械唯物主义"
   myhaml :article

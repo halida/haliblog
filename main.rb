@@ -8,6 +8,7 @@ require './rst'
 require './db'
 
 set :port, 8181
+set :host, "0.0.0.0"
 # set :environment, :production
 
 not_found do

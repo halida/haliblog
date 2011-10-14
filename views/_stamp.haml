@@ -1,0 +1,5 @@
+#time-stamp
+  %p 建立时间: #{article.created.strftime "%Y/%m/%d %H:%M:%S"}
+  - if article.updated != article.created
+    %p 更新时间: #{article.updated.strftime "%Y/%m/%d %H:%M:%S"}
+  %hr

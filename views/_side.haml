@@ -12,34 +12,33 @@
   </script>
 
   <!-- for twitter -->
-  <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-  <script>
-  new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 6000,
-  width: 300,
-  height: 300,
-  theme: {
-  shell: {
-  background: '#f0f0f0',
-  color: '#000000'
-  },
-  tweets: {
-  background: '#f0f0f0',
-  color: '#000000',
-  links: '#008000'
-  }
-  },
-  features: {
-  scrollbar: false,
-  loop: false,
-  live: false,
-  hashtags: true,
-  timestamp: true,
-  avatars: false,
-  behavior: 'all'
-  }
-  }).render().setUser('linjunhalida').start();
-  </script>
+  %script{:src => "http://widgets.twimg.com/j/2/widget.js"}
+  :javascript
+    new TWTR.Widget({
+      version: 2,
+      type: 'profile',
+      rpp: 4,
+      interval: 30000,
+      width: 250,
+      height: 300,
+      theme: {
+        shell: {
+          background: '#727872',
+          color: '#ffffff'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#000000',
+          links: '#07abab'
+        }
+      },
+      features: {
+        scrollbar: false,
+        loop: false,
+        live: false,
+        hashtags: true,
+        timestamp: true,
+        avatars: false,
+        behavior: 'all'
+      }
+    }).render().setUser('linjunhalida').start();

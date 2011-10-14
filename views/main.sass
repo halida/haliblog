@@ -1,17 +1,93 @@
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+@import compass/reset.scss
+@import compass/layout.scss
+@import blueprint
+
+// Base font
+=font-default
+  font: 16px Arial, Helvetica, sans-serif
+=font-header
+  font: 40px Arial, Helvetica, sans-serif
+=font-footer
+  font: 10px Arial, Helvetica, sans-serif
+  color: #aaaaaa
+
+//layouts
+$content-width: 980px
+
+// Links
+a
+  text-decoration: none
+  color: #3366CC
+  &:hover
+    color: #3366CC
+    text-decoration: none
+  &:focus,
+  &:active
+    outline: none
+  &:visited
+    // Default style for visited links
+  &:hover
+    color: #444444
+
+
 body
-  color: #303030
-li
-  color: #101010
-
-.container-fluid
-  margin-top: 60px
-
-.container-fluid .sidebar
-  float: right
-  width: 300px
-
-.container-fluid .content
-  width: 700px
-
-footer.p
+  +font-default
+  background: white
+  color: #0d0d0d
   align: center
+
+#nav
+  +border-radius(6px)
+  background: #323232
+  border: 1px solid #ccc
+  width: $content-width
+  height: 30px
+  margin: 10px auto
+
+  a
+    color: white
+
+  ul.secondary-nav
+    float: right
+
+  ul
+    float: left
+    li
+      display: inline
+      line-height: 30px
+      padding: 0 15px
+ 
+.two-col
+  $blueprint_grid_columns : 8
+  $blueprint_grid_width : 80px
+  h1
+    +font-header
+  +container
+  #header, #footer
+    +column(8)
+  #sidebar
+    +column(2, true)
+  #content
+    +column(6)
+
+
+
++sticky-footer(72px, "#layout", "#layout_footer", "footer")
+
+footer
+  width: $content-width
+  margin: 10px auto
+  align: center
+  +font-footer
+
+  $blueprint_grid_columns : 8
+  $blueprint_grid_width : 80px
+
+  .info
+    +column(3)
+
+  .time
+    +column(5)

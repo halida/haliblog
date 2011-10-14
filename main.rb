@@ -1,11 +1,33 @@
 # -*- coding: utf-8 -*-
 require 'sinatra'
+
 require 'haml'
 require 'sass'
+require 'compass'
+
 require 'coffee-script'
 
 require './rst'
 require './db'
+
+configure do
+  Compass.configuration do |config|
+    config.project_path = File.dirname(__FILE__)
+    config.sass_dir = 'views'
+  end
+
+  set :haml, { :format => :html5 }
+  set :sass, Compass.sass_engine_options
+end
+
+module Sinatra
+  module RenderPartial
+    def partial(page, options={})
+      haml page, options.merge!(:layout => false)
+    end
+  end
+  helpers RenderPartial
+end
 
 set :port, 8181
 set :host, "0.0.0.0"

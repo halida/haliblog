@@ -6,6 +6,6 @@ window.init = ()->
 
 window.init_pjax = ()->
   error_func = (xhr, err)-> $('.error').text('Something went wrong: ' + err)
-  $('.js-pjax').pjax '.content', {timeout: null, error: error_func}
-  $('body').bind 'start.pjax', ()-> $('.content').slideUp(500)
-  $('body').bind 'end.pjax'  , ()-> $('.content').slideDown(500)
+  $('.js-pjax').pjax '#content', {timeout: null, error: error_func}
+  $('body').bind 'start.pjax', ()-> $('#content').slideUp(500)
+  $('body').bind 'end.pjax'  , ()-> $('#content').slideDown(500)

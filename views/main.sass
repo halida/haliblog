@@ -15,7 +15,8 @@
   color: #aaaaaa
 
 //layouts
-$content-width: 980px
+$grid : 80px
+$content-width: 12 * $grid
 
 // Links
 a
@@ -32,7 +33,6 @@ a
   &:hover
     color: #444444
 
-
 body
   +font-default
   background: white
@@ -40,39 +40,48 @@ body
   align: center
 
 #nav
-  +border-radius(6px)
-  background: #323232
-  border: 1px solid #ccc
-  width: $content-width
-  height: 30px
-  margin: 10px auto
+  +opacity(0.8)
+  top: 0px
+  width: 100%
+  position: fixed
 
-  a
-    color: white
+  #container
+    +border-radius(6px)
+    background: #323232
+    border: 1px solid #000000
+    width: $content-width + 20px
+    margin: 10px auto
+    height: 30px
+  
+    .secondary-nav
+      float: right
+  
+    a
+      color: white
+      &:hover
+        color: #ff4444
 
-  ul.secondary-nav
-    float: right
+    ul
+      float: left
+      li
+        display: inline
+        line-height: 30px
+        padding: 0 15px
 
-  ul
-    float: left
-    li
-      display: inline
-      line-height: 30px
-      padding: 0 15px
  
-.two-col
-  $blueprint_grid_columns : 8
-  $blueprint_grid_width : 80px
-  h1
-    +font-header
-  +container
-  #header, #footer
-    +column(8)
-  #sidebar
-    +column(2, true)
-  #content
-    +column(6)
+h1
+  +font-header
 
+#warper
+  margin: 60px auto 20px auto
+  width: $grid * 12
+
+  #sidebar
+    float: right
+    width: $grid * 3
+  #content
+    float: left
+    width: $grid * 8
 
 
 +sticky-footer(72px, "#layout", "#layout_footer", "footer")

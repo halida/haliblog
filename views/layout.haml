@@ -18,12 +18,11 @@
   %body
     = partial :_nav
 
-    .two-col
+    #warper
       #content
         =yield
 
       = partial :_side
 
-    %footer
-      %p @2010 linjunhalida, all right reserved
+    = partial :_footer
 

@@ -14,9 +14,18 @@
   font: 10px Arial, Helvetica, sans-serif
   color: #aaaaaa
 
+//format
+h1
+  +font-header
+  margin: 15px 0px 0px 0px
+
+p
+  line-height: 22px
+  margin: 10px 0px
+
 //layouts
-$grid : 80px
-$content-width: 12 * $grid
+$grid : 70px
+$content-width: 14 * $grid
 
 // Links
 a
@@ -44,22 +53,23 @@ body
   top: 0px
   width: 100%
   position: fixed
+  z-index: 1000
 
   #container
     +border-radius(6px)
     background: #323232
     border: 1px solid #000000
-    width: $content-width + 20px
+    width: $content-width
     margin: 10px auto
     height: 30px
-  
+
     .secondary-nav
       float: right
   
     a
       color: white
       &:hover
-        color: #ff4444
+        color: #3366CC
 
     ul
       float: left
@@ -68,18 +78,19 @@ body
         line-height: 30px
         padding: 0 15px
 
- 
-h1
-  +font-header
 
 #warper
-  margin: 60px auto 20px auto
-  width: $grid * 12
+  margin: auto
+  padding-top: 60px
+  width: $grid * 13
 
   #sidebar
+    /* position: fixed
+    /* left: 900px
     float: right
-    width: $grid * 3
+    width: $grid * 4
   #content
+    min-height: 800px
     float: left
     width: $grid * 8
 
@@ -88,7 +99,8 @@ h1
 
 footer
   width: $content-width
-  margin: 10px auto
+  margin: 20px auto
+  padding-top: 20px
   align: center
   +font-footer
 

@@ -1,4 +1,5 @@
 #article
+  %h1= @article.title
   =@article.get_content
 
 = partial :_stamp, :locals => {:article => @article}

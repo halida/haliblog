@@ -8,5 +8,14 @@
 
   = partial :_stamp, :locals => {:article => article}
 
-#paginate
-  <a href="?starts=#{@articles[-1].id}" class="js-pjax btn primary">更多</a>
+- if @articles.length > 0
+  #more
+    <img src="/ajax-loader.gif" id="more-display" />
+  
+    :javascript
+      var more = function(){
+        $.get(window.location + (/\?/.test(window.location) ? "&" : "?") + "from=#{@articles[-1].id}&_pjax=true", function(data){
+          $('#more').replaceWith(data);
+        });
+      };
+      $('#more').appear(more);

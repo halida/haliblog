@@ -44,8 +44,8 @@ error do
 end
 
 get '/' do
-  starts = params[:starts] || 10000000
-  @articles = Article.first(5, :id.lt => starts, :order => :created.desc)
+  from = params[:from] || 10000000
+  @articles = Article.first(5, :id.lt => from, :order => :created.desc)
   myhaml :index 
 end
 

@@ -77,6 +77,11 @@ get '/about' do
   myhaml :article
 end
 
+get '/sitemap.xml' do
+  @articles = Article.all :order => [:created.desc]
+  haml :sitemap, {:layout => false}
+end
+
 def myhaml target, args={}
   args.merge! :layout => false if params[:_pjax]
   haml target, args

@@ -24,13 +24,12 @@
       })();
 
   %body
-    = partial :_nav
-
     #warper
       #content
         =yield
 
       = partial :_side
 
+    = partial :_nav
     = partial :_footer
 

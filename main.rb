@@ -73,7 +73,7 @@ get '/feed' do
 end
 
 get '/about' do
-  @article = Article.first :title => "机械唯物主义"
+  @article = Article.first :title => "about"
   myhaml :article
 end
 

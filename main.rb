@@ -66,7 +66,7 @@ get '/article/*' do |title|
   myhaml :article
 end
 
-get '/feed' do
+get /^\/feed/ do
   @articles = Article.first(5, :order => [:created.desc] )
   @updated = @articles[0].updated
   myhaml :feed, {:layout => false}

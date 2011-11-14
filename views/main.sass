@@ -43,6 +43,7 @@ $content-width: 14 * $grid
 
 // Links
 a
+  cursor: pointer
   text-decoration: none
   &:hover
     text-decoration: none
@@ -122,3 +123,43 @@ footer
 .time-stamp
   margin-top: 10px
   text-align: right
+
+#return-top-block
+  position: fixed
+  width: 100%
+  bottom: -130px
+  +transition-property(all)
+  +transition-duration(0.5s)
+  +transition-timing-function(ease-in)
+
+  #return-top-inner
+    width: 700px
+    height: 30px
+    margin: 0px auto
+
+#return-top
+  outline: medium none
+  border: 0px none
+
+  display: block
+  position: relative
+  left: -62px
+
+  width: 80px  
+  height: 14px
+
+  padding: 5px 10px
+  +border-top-radius(4px)
+
+  font-weight: bold
+  text-align: center
+
+  +rotate(270deg)
+
+  +opacity(0.1)
+
+  +transition-property(all)
+  +transition-duration(0.5s)
+  +transition-timing-function(ease-in)
+  &:hover
+    +opacity(1)

@@ -1,8 +1,10 @@
 @import compass/reset
-@import compass/utilities
-@import compass/css3
-@import compass/reset.scss
-@import compass/layout.scss
+@import compass/css3, compass/utilities
+@import "compass/layout/stretching"
+@import "compass/css3/transform"
+@import "compass/css3/transition"
+
+@import compass/layout
 @import blueprint
 
 // Base font
@@ -12,7 +14,61 @@
   font: 40px Arial, Helvetica, sans-serif
 =font-footer
   font: 10px Arial, Helvetica, sans-serif
-  color: #aaaaaa
+
+// base color
+$c_1: #844341
+$c_2: #D5CC92
+$c_3: #BBA146
+$c_4: #897B26
+$c_5: #55591C
+$c_6: #D5D1B4
+$c_7: #383636
+
+body
+  background: $c_6
+  color: $c_7
+nav
+  background: $c_1
+  #container
+    a
+      color: white
+      &:hover
+        color: $c_2
+#warper
+  background: $c_2
+  font-color: $c_3
+footer
+  background: $c_7
+  color: $c_2
+a
+  color: $c_1
+  &:hover
+    color: $c_5
+
+.color_panel
+  margin-top: 3px
+  float: right
+  .color
+    color: black
+    display: inline-block
+    width: 20px
+    height: 20px
+    border: 1px solid #000000
+  .c1
+    background: $c_1
+  .c2
+    background: $c_2
+  .c3
+    background: $c_3
+  .c4
+    background: $c_4
+  .c5
+    background: $c_5
+  .c6
+    background: $c_6
+  .c7
+    background: $c_7
+  
 
 //format
 h1
@@ -30,78 +86,69 @@ $content-width: 14 * $grid
 // Links
 a
   text-decoration: none
-  color: #3366CC
   &:hover
-    color: #3366CC
     text-decoration: none
   &:focus,
   &:active
     outline: none
   &:visited
     // Default style for visited links
-  &:hover
-    color: #444444
+hr
+  border: 1px solid $c_5
+
+.time-stamp
+  color: $c_4
 
 body
   +font-default
-  background: white
-  color: #0d0d0d
   align: center
 
-#nav
-  +opacity(0.8)
+#warper
+  margin: auto
+  width: 700px
+  min-height: 100%
+  +single-box-shadow
+
+  #content, footer
+    padding: 0px 10px
+  #content
+    padding-top: 50px
+    min-height: 800px
+    .article
+      img
+        +single-box-shadow
+        +border-radius(5px)
+      
+nav
   top: 0px
-  width: 100%
+  width: 700px
   position: fixed
   z-index: 1000
   font-weight: bold
 
-  #container
-    +border-radius(6px)
-    background: #323232
-    border: 1px solid #000000
-    width: $content-width
-    margin: 10px auto
-    padding-top: 3px
-    height: 30px
+  border-bottom: 1px solid #000000
 
+  #container
+
+    .first-nav
+      display: inline-block
     .secondary-nav
       float: right
   
-    a
-      color: white
-      &:hover
-        color: #3366CC
-
     ul
-      float: left
       li
         display: inline
         line-height: 30px
         padding: 0 15px
 
 
-#warper
-  margin: auto
-  padding-top: 60px
-  width: $grid * 13
-
-  #sidebar
-    /* position: fixed
-    /* left: 900px
-    float: right
-    width: $grid * 4
-  #content
-    min-height: 800px
-    float: left
-    width: $grid * 8
-
-#more
+.more
   text-align: center
 
 +sticky-footer(72px, "#layout", "#layout_footer", "footer")
 footer
-  width: $content-width
+  border-top: 1px solid #000000
+
   margin: 20px auto
   padding-top: 20px
   align: center
@@ -119,6 +166,6 @@ footer
 #comments
   margin-top: 90px
 
-#time-stamp
+.time-stamp
   margin-top: 10px
   text-align: right

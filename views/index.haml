@@ -9,13 +9,13 @@
   = partial :_stamp, :locals => {:article => article}
 
 - if @articles.length > 0
-  #more
+  #activity-more.more
     <img src="/ajax-loader.gif" id="more-display" />
   
     :javascript
       var more = function(){
         $.get(window.location + (/\?/.test(window.location) ? "&" : "?") + "from=#{@articles[-1].id}&_pjax=true", function(data){
-          $('#more').replaceWith(data);
+          $('#activity-more').replaceWith(data);
         });
       };
-      $('#more').appear(more);
+      $('#activity-more').appear(more);

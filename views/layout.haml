@@ -25,11 +25,7 @@
 
   %body
     #warper
-      #content
-        =yield
-
-      = partial :_side
-
-    = partial :_nav
-    = partial :_footer
+      = partial :_nav
+      #content=yield
+      = partial :_footer
 

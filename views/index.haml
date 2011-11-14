@@ -3,7 +3,7 @@
   %h1#article-title
     =link_to article.show_title, "/article/#{article.title}", true
 
-  #article
+  .article
     =article.get_content
 
   = partial :_stamp, :locals => {:article => article}

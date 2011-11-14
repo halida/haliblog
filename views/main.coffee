@@ -1,8 +1,7 @@
 window.init = ()->
-  ret = (event, data, status, xhr)->
-    event.preventDefault()
-    $.ajax {url: this, data:"_pjax=true", success: (data)-> $("#content").html(data)}
-  $('a.js-pjax').live "click", ret
+  init_pjax()
+  $('select#color-select').change ()->
+    $('#color-css').attr('href', '/color'+$(this).val()+'.css')
 
 window.init_pjax = ()->
   error_func = (xhr, err)-> $('.error').text('Something went wrong: ' + err)

@@ -15,37 +15,8 @@
 =font-footer
   font: 10px Arial, Helvetica, sans-serif
 
-// base color
-$c_1: #844341
-$c_2: #D5CC92
-$c_3: #BBA146
-$c_4: #897B26
-$c_5: #55591C
-$c_6: #D5D1B4
-$c_7: #383636
 
-body
-  background: $c_6
-  color: $c_7
-nav
-  background: $c_1
-  #container
-    a
-      color: white
-      &:hover
-        color: $c_2
-#warper
-  background: $c_2
-  font-color: $c_3
-footer
-  background: $c_7
-  color: $c_2
-a
-  color: $c_1
-  &:hover
-    color: $c_5
-
-.color_panel
+#color_panel
   margin-top: 3px
   float: right
   .color
@@ -54,26 +25,13 @@ a
     width: 20px
     height: 20px
     border: 1px solid #000000
-  .c1
-    background: $c_1
-  .c2
-    background: $c_2
-  .c3
-    background: $c_3
-  .c4
-    background: $c_4
-  .c5
-    background: $c_5
-  .c6
-    background: $c_6
-  .c7
-    background: $c_7
-  
+#color-select
+  float: right
 
 //format
 h1
   +font-header
-  margin: 15px 0px 0px 0px
+  /* margin: 15px 0px 0px 0px
 
 p
   line-height: 22px
@@ -93,11 +51,6 @@ a
     outline: none
   &:visited
     // Default style for visited links
-hr
-  border: 1px solid $c_5
-
-.time-stamp
-  color: $c_4
 
 body
   +font-default

@@ -96,6 +96,12 @@ get '/main.css' do
   sass :main
 end
 
+get '/color1.css' do ;  sass :color1; end
+get '/color2.css' do ;  sass :color2; end
+get '/color3.css' do ;  sass :color3; end
+get '/color4.css' do ;  sass :color4; end
+get '/color5.css' do ;  sass :color5; end
+
 get '/main.js' do
   coffee :main
 end

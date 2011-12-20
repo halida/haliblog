@@ -3,6 +3,8 @@ require './db'
 
 def updateDB
   """因为文档是采用rst编写的, 需要能够自动从hg源里面导入进来资料"""
+  # 更新
+  `cd ../blog; hg pull; hg up`
   blog_dir = '../blog/'
   get_created = "hg log -R #{blog_dir} -r0:tip -l 1 --template '{date|isodate}' "
   get_updated = "hg log -R #{blog_dir} -l 1 --template '{date|isodate}' "

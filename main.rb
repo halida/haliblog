@@ -9,6 +9,7 @@ require 'coffee-script'
 
 require './rst'
 require './db'
+require './blog_update'
 
 configure do
   Compass.configuration do |config|
@@ -104,4 +105,9 @@ get '/color5.css' do ;  sass :color5; end
 
 get '/main.js' do
   coffee :main
+end
+
+post '/publish_with_secret_87564' do
+  updateDB
+  'ok'
 end

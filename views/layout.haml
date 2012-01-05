@@ -15,6 +15,7 @@
     <script src="/main.js"></script>
     :javascript
       $(function(){init();});
+
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-26509244-1']);
       _gaq.push(['_trackPageview', '_trackPageLoadTime']);
@@ -27,9 +28,12 @@
   %body
     #warper
       = partial :_nav
+      #block-nav
       #content=yield
       = partial :_footer
-      = partial :_chat
+
+    = partial :_chat
+
     #return-top-block
       #return-top-inner
         %a{:id => "return-top", :onclick => "javascript: $('html,body').animate({scrollTop: 0}, 400);"}= "===>"

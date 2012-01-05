@@ -4,6 +4,12 @@ window.init = ()->
     $('#color-css').attr('href', '/color'+$(this).val()+'.css')
   window.registerScroll("#return-top-block")
 
+  $(window).resize onResize
+  onResize()
+
+onResize = ()->
+  $('#content').css('height', window.innerHeight - 30 - 72 - 20 - 20 + 'px')
+
 window.init_pjax = ()->
   error_func = (xhr, err)-> $('.error').text('Something went wrong: ' + err)
   $('.js-pjax').pjax '#content', {timeout: null, error: error_func}

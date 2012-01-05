@@ -66,13 +66,15 @@ body
   min-height: 100%
   position: relative
   +single-box-shadow
+  #block-nav  
+    height: 30px  
 
   #content, footer
     padding: 0px 10px
   #content
+    overflow-y: scroll
     word-wrap: break-word
-    padding-top: 50px
-    min-height: 800px
+    padding-top: 10px  
     .article
       img
         +single-box-shadow
@@ -81,10 +83,10 @@ body
 nav
   top: 0px
   width: 700px
+  height: 32px
   position: fixed
   z-index: 1000
   font-weight: bold
-
   border-bottom: 1px solid #000000
 
   #container
@@ -108,7 +110,6 @@ nav
 footer
   border-top: 1px solid #000000
 
-  margin: 20px auto
   padding-top: 20px
   align: center
   +font-footer

@@ -1,19 +1,19 @@
 -@articles.each do |article|
 
-  %h1#article-title
+  %h1.article-title
     =link_to article.show_title, "/article/#{article.title}", true
 
-  .article
-    =article.get_content
-
+  .article=article.get_content
   = partial :_stamp, :locals => {:article => article}
+  %hr
 
 - if @articles.length > 0
   #activity-more.more
-    <img src="/ajax-loader.gif" id="more-display" />
+    %a{onclick: "more()"} < Click Me to see More >
   
     :javascript
       var more = function(){
+        $('#activity-more').html('<img src="/ajax-loader.gif" id="more-display" />')
         $.get(window.location + (/\?/.test(window.location) ? "&" : "?") + "from=#{@articles[-1].id}&_pjax=true", function(data){
           $('#activity-more').replaceWith(data);
         });

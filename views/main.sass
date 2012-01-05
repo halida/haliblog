@@ -12,9 +12,9 @@ body
 
 // Base font
 =font-default
-  font: 16px Arial, Helvetica, sans-serif
+  font: 14px Arial, Helvetica, sans-serif
 =font-header
-  font: 40px Arial, Helvetica, sans-serif
+  font: 30px Arial, Helvetica, sans-serif
 =font-footer
   font: 10px Arial, Helvetica, sans-serif
 
@@ -34,11 +34,25 @@ body
 //format
 h1
   +font-header
-  /* margin: 15px 0px 0px 0px
+  padding-top: 5px
 
 p
-  line-height: 22px
-  margin: 10px 0px
+  line-height: 20px
+  margin-bottom: 5px
+
+ul
+  list-style-type: square
+ol
+  list-style-type: decimal
+ul, ol
+  padding-left: 5px
+  margin-left: 10px
+li
+  padding-bottom: 4px
+
+hr
+  margin: 30px auto 80px
+  width: 150px
 
 //layouts
 $grid : 70px
@@ -79,7 +93,18 @@ body
       img
         +single-box-shadow
         +border-radius(5px)
-      
+
+.article-title
+  text-align: center
+  padding: 10px
+
+.article-list
+  clear: both
+  padding: 10px
+  .sep
+    width: 40px      
+    display: inline-block 
+
 nav
   top: 0px
   width: 700px
@@ -105,6 +130,9 @@ nav
 
 .more
   text-align: center
+  padding: 20px
+  cursor: pointer
+
 
 +sticky-footer(72px, "#layout", "#layout_footer", "footer")
 footer

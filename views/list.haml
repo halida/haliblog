@@ -1,7 +1,5 @@
 -@articles.each do |article|
-
-  %h1
+  .article-list
+    #{article.created.strftime "%Y/%m/%d %H:%M:%S"}
+    %span.sep 
     =link_to article.show_title, "/article/#{article.title}", true
-
-  = partial :_stamp, :locals => {:article => article}
-

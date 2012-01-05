@@ -1,6 +1,6 @@
 .article
   = partial :_title_side
-  %h1= @article.show_title
+  %h1.article-title= @article.show_title
   =@article.get_content
 
 = partial :_stamp, :locals => {:article => @article}

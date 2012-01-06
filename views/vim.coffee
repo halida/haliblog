@@ -5,9 +5,9 @@
 pre_g = false
 scroll_size = 100
 
-window.init_vim_key = (target)->
-    target = window unless target
-    target = $(target)
+window.init_vim_key = (div)->
+    div = document unless div
+    target = $(div)
     $(document).keypress (e)->
         if (e.keyCode == 107) # k
             target.scrollTop(target.scrollTop()-scroll_size)
@@ -67,7 +67,11 @@ window.init_vim_key = (target)->
             help.appendTo('body')
 
         if (e.keyCode == 71 and e.shiftKey) # G
-            target.scrollTop($(document).height())
+            if div == document
+                total_height = target.height()
+            else
+                total_height = target[0].scrollHeight
+            target.scrollTop(total_height)
             e.preventDefault()
             return
 

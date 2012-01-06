@@ -106,6 +106,9 @@ get '/color5.css' do ;  sass :color5; end
 get '/main.js' do
   coffee :main
 end
+get '/vim.js' do
+  coffee :vim
+end
 
 post '/publish_with_secret_87564' do
   updateDB

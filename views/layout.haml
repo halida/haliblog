@@ -13,8 +13,10 @@
     <script src="/jquery.pjax.js"></script>
     <script src="/jquery.appear-1.1.1.min.js"></script>
     <script src="/main.js"></script>
+    <script src="/vim.js"></script>
+
     :javascript
-      $(function(){init();});
+      $(function(){init(); init_vim_key('#content')});
 
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-26509244-1']);
